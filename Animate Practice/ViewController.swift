@@ -18,17 +18,25 @@ class ViewController: UIViewController {
     
     @objc func animatePressed() {
         let coloredSquare = UIView()
+        let size : CGFloat = CGFloat(arc4random_uniform(40))+20
+        let yPosition : CGFloat = CGFloat(arc4random_uniform(200))+20
         coloredSquare.backgroundColor = UIColor.blue
-        coloredSquare.frame = CGRect(x:0, y:120, width:50, height:50)
+        coloredSquare.frame = CGRect(x: 0, y: yPosition, width: size, height: size)
+        
+        let duration = 1.0
+        let delay = 0.0
+        let options = UIView.AnimationOptions.curveLinear
+        
         self.view.addSubview(coloredSquare)
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
             coloredSquare.backgroundColor = UIColor.red
-            coloredSquare.frame = CGRect(x: 320-50, y: 120, width: 50, height: 50)
+            coloredSquare.frame = CGRect(x: 320-size, y: yPosition, width: size, height: size)
         },
         completion: { animationFinished in
             coloredSquare.removeFromSuperview()
                     
         })
+        
     }
 
 }
