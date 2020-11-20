@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FirstViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animate_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" customModule="Animate_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,16 @@
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsS-LA-W5e">
+                                <rect key="frame" x="130.5" y="807" width="153" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Go to Second View">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2LQ-LS-146" kind="presentation" id="TKh-uh-S3o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,12 +50,16 @@
                             <constraint firstItem="uLY-od-Hcc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="24a-Mz-Bq0"/>
                             <constraint firstItem="QKT-uj-PQA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3Vc-vU-bwT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fBI-hj-Qe7" secondAttribute="bottom" constant="226" id="9Vj-Jw-Qun"/>
+                            <constraint firstItem="AsS-LA-W5e" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GWi-lx-D9i"/>
+                            <constraint firstItem="AsS-LA-W5e" firstAttribute="top" secondItem="fBI-hj-Qe7" secondAttribute="bottom" constant="171" id="RaT-TC-dSY"/>
                             <constraint firstItem="QKT-uj-PQA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TmT-eJ-N37"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLY-od-Hcc" secondAttribute="trailing" constant="64" id="arf-EV-qxR"/>
                             <constraint firstItem="fBI-hj-Qe7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hOk-m7-Q1l"/>
                             <constraint firstItem="fBI-hj-Qe7" firstAttribute="top" secondItem="uLY-od-Hcc" secondAttribute="bottom" constant="45" id="l0o-eO-jmB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AsS-LA-W5e" secondAttribute="bottom" constant="21" id="qHv-Fo-GGY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rRJ-c1-C6F"/>
                     <connections>
                         <outlet property="animateButton" destination="QKT-uj-PQA" id="Xx2-x1-Ofg"/>
                         <outlet property="numberOfSquares" destination="uLY-od-Hcc" id="lMM-Ip-L4B"/>
@@ -55,8 +69,43 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
         </scene>
+        <!--SecondViewController-->
+        <scene sceneID="7x1-6v-W5P">
+            <objects>
+                <viewController title="SecondViewController" id="2LQ-LS-146" customClass="SecondViewController" customModule="Animate_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gMH-cR-Hrn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RW-0o-IeB">
+                                <rect key="frame" x="182" y="494" width="50" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="54a-mT-8Mk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2RW-0o-IeB" firstAttribute="top" secondItem="54a-mT-8Mk" secondAttribute="top" constant="494" id="CTU-vG-1G4"/>
+                            <constraint firstItem="2RW-0o-IeB" firstAttribute="centerX" secondItem="54a-mT-8Mk" secondAttribute="centerX" id="XbW-AT-7nm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bns-fU-xLA"/>
+                    <connections>
+                        <outlet property="backButton" destination="2RW-0o-IeB" id="Bhs-XJ-pmm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFQ-09-X3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="77.678571428571431"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
