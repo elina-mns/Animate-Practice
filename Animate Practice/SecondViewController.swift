@@ -8,6 +8,10 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    let container = UIView()
+    let redSquare = UIView()
+    let blueSquare = UIView()
 
     @IBOutlet weak var backButton: UIButton!
     
@@ -18,10 +22,6 @@ class SecondViewController: UIViewController {
         
         animateButton.addTarget(self, action: #selector(animatePressed), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-
-        let container = UIView()
-        let redSquare = UIView()
-        let blueSquare = UIView()
         
         container.frame = CGRect(x: 60, y: 60, width: 200, height: 200)
         view.addSubview(container)
@@ -40,7 +40,15 @@ class SecondViewController: UIViewController {
     }
     
     @objc func animatePressed() {
+        var views: (frontView: UIView, backView: UIView)
         
+        if ((self.redSquare.superview) != nil) {
+            views = (frontView: redSquare, backView: blueSquare)
+        } else {
+            views = (frontView: blueSquare, backView: redSquare)
+        }
+        let transitionOptions = UIView.AnimationOptions.transitionFlipFromLeft
+        UIView.transition(from: views.frontView, to: views.backView, duration: 1.0, options: transitionOptions, completion: nil)
     }
 
 }
