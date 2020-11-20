@@ -11,33 +11,41 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animateButton: UIButton!
     
+    @IBOutlet weak var numberOfSquares: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         animateButton.addTarget(self, action: #selector(animatePressed), for: .touchUpInside)
     }
+
     
     @objc func animatePressed() {
-        let coloredSquare = UIView()
-        let size : CGFloat = CGFloat(arc4random_uniform(40))+20
-        let yPosition : CGFloat = CGFloat(arc4random_uniform(200))+20
-        coloredSquare.backgroundColor = UIColor.blue
-        coloredSquare.frame = CGRect(x: 0, y: yPosition, width: size, height: size)
+        let squares = Int(self.numberOfSquares.value)
         
-        let duration = 1.0
-        let delay = 0.0
-        let options = UIView.AnimationOptions.curveLinear
+        for _ in 1...squares {
         
-        self.view.addSubview(coloredSquare)
-        UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
-            coloredSquare.backgroundColor = UIColor.red
-            coloredSquare.frame = CGRect(x: 320-size, y: yPosition, width: size, height: size)
-        },
-        completion: { animationFinished in
-            coloredSquare.removeFromSuperview()
-                    
-        })
-        
+            let duration = 1.0
+            let delay = TimeInterval(900 + arc4random_uniform(100)) / 1000
+            let options = UIView.AnimationOptions.curveLinear
+            
+            
+            let size : CGFloat = CGFloat(arc4random_uniform(40))+20
+            let yPosition : CGFloat = CGFloat(arc4random_uniform(200))+20
+            
+            let coloredSquare = UIView()
+            coloredSquare.backgroundColor = UIColor.blue
+            coloredSquare.frame = CGRect(x: 0-size, y: yPosition, width: size, height: size)
+            self.view.addSubview(coloredSquare)
+            
+            UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
+                coloredSquare.backgroundColor = UIColor.red
+                coloredSquare.frame = CGRect(x: 500+size, y: yPosition+size, width: size, height: size)
+            },
+            completion: { animationFinished in
+                coloredSquare.removeFromSuperview()
+                        
+            })
+        }
     }
-
 }
 
