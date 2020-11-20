@@ -11,9 +11,12 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var animateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        animateButton.addTarget(self, action: #selector(animatePressed), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
 
         let container = UIView()
@@ -34,6 +37,10 @@ class SecondViewController: UIViewController {
     
     @objc func goBack() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func animatePressed() {
+        
     }
 
 }

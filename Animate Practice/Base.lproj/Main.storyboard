@@ -77,10 +77,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RW-0o-IeB">
-                                <rect key="frame" x="182" y="494" width="50" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Back">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4s-u3-Jcg">
+                                <rect key="frame" x="166" y="415" width="82" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Animate!">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RW-0o-IeB">
+                                <rect key="frame" x="194" y="523" width="26" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.2" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -88,12 +96,15 @@
                         <viewLayoutGuide key="safeArea" id="54a-mT-8Mk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2RW-0o-IeB" firstAttribute="top" secondItem="54a-mT-8Mk" secondAttribute="top" constant="494" id="CTU-vG-1G4"/>
-                            <constraint firstItem="2RW-0o-IeB" firstAttribute="centerX" secondItem="54a-mT-8Mk" secondAttribute="centerX" id="XbW-AT-7nm"/>
+                            <constraint firstItem="2RW-0o-IeB" firstAttribute="centerX" secondItem="L4s-u3-Jcg" secondAttribute="centerX" id="EJ3-Da-VWi"/>
+                            <constraint firstItem="54a-mT-8Mk" firstAttribute="bottom" secondItem="2RW-0o-IeB" secondAttribute="bottom" constant="185" id="JiN-ZX-QLS"/>
+                            <constraint firstItem="2RW-0o-IeB" firstAttribute="top" secondItem="L4s-u3-Jcg" secondAttribute="bottom" constant="73" id="LYP-X2-cQI"/>
+                            <constraint firstItem="2RW-0o-IeB" firstAttribute="centerX" secondItem="54a-mT-8Mk" secondAttribute="centerX" id="cXI-cV-VAo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bns-fU-xLA"/>
                     <connections>
+                        <outlet property="animateButton" destination="L4s-u3-Jcg" id="tY5-hw-otz"/>
                         <outlet property="backButton" destination="2RW-0o-IeB" id="Bhs-XJ-pmm"/>
                     </connections>
                 </viewController>
@@ -103,6 +114,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.2" catalog="system" width="128" height="86"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
