@@ -24,7 +24,7 @@ class FirstViewController: UIViewController {
         
         for _ in 0...squares {
         
-            let duration = 1.0
+            let duration = Double(arc4random_uniform(40)+30) / 10
             let delay = TimeInterval(900 + arc4random_uniform(100)) / 1000
             let options = UIView.AnimationOptions.curveLinear
             

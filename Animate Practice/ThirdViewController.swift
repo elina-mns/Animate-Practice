@@ -34,7 +34,8 @@ class ThirdViewController: UIViewController {
             animation.path = path.cgPath
             animation.rotationMode = CAAnimationRotationMode.rotateAuto
             animation.repeatCount = Float.infinity
-            animation.duration = 5.0
+            animation.duration = Double(arc4random_uniform(40)+30) / 10
+            animation.timeOffset = Double(arc4random_uniform(290))
             
             blackSquare.layer.add(animation, forKey: "animate the position along path")
         }
