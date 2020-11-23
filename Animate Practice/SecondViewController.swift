@@ -44,7 +44,7 @@ class SecondViewController: UIViewController {
         let fullRotation = CGFloat(Double.pi * 2)
         let duration = 2.0
         let delay = 0.0
-        let options = UIView.KeyframeAnimationOptions.calculationModeLinear
+        let options = UIView.KeyframeAnimationOptions.calculationModePaced
         
         UIView.animateKeyframes(withDuration: duration, delay: delay, options: options, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {

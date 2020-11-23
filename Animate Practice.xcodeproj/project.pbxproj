@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310D6B0A256C219B004C1898 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310D6B09256C219B004C1898 /* ThirdViewController.swift */; };
 		319DBA4B2568328100F568FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319DBA4A2568328100F568FB /* AppDelegate.swift */; };
 		319DBA4D2568328100F568FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319DBA4C2568328100F568FB /* SceneDelegate.swift */; };
 		319DBA4F2568328100F568FB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319DBA4E2568328100F568FB /* FirstViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		310D6B09256C219B004C1898 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		319DBA472568328100F568FB /* Animate Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animate Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		319DBA4A2568328100F568FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319DBA4C2568328100F568FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				319DBA4C2568328100F568FB /* SceneDelegate.swift */,
 				319DBA4E2568328100F568FB /* FirstViewController.swift */,
 				319DBA832568673700F568FB /* SecondViewController.swift */,
+				310D6B09256C219B004C1898 /* ThirdViewController.swift */,
 				319DBA502568328100F568FB /* Main.storyboard */,
 				319DBA562568328200F568FB /* Assets.xcassets */,
 				319DBA582568328200F568FB /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 				319DBA4B2568328100F568FB /* AppDelegate.swift in Sources */,
 				319DBA552568328100F568FB /* Animate_Practice.xcdatamodeld in Sources */,
 				319DBA842568673700F568FB /* SecondViewController.swift in Sources */,
+				310D6B0A256C219B004C1898 /* ThirdViewController.swift in Sources */,
 				319DBA4D2568328100F568FB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
