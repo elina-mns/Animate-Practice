@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
     @objc func animatePressed() {
         let squares = Int(self.numberOfSquares.value)
         
-        for _ in 1...squares {
+        for _ in 0...squares {
         
             let duration = 1.0
             let delay = TimeInterval(900 + arc4random_uniform(100)) / 1000
