@@ -10,8 +10,8 @@ import UIKit
 class SecondViewController: UIViewController {
     
     let container = UIView()
-    let redSquare = UIView()
     let blueSquare = UIView()
+    let yellowSquare = UIView()
 
     @IBOutlet weak var backButton: UIButton!
     
@@ -26,13 +26,13 @@ class SecondViewController: UIViewController {
         container.frame = CGRect(x: 60, y: 60, width: 200, height: 200)
         view.addSubview(container)
         
-        redSquare.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        blueSquare.frame = redSquare.frame
+        yellowSquare.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        blueSquare.frame = yellowSquare.frame
         
-        redSquare.backgroundColor = UIColor.red
+        yellowSquare.backgroundColor = UIColor.yellow
         blueSquare.backgroundColor = UIColor.blue
         
-        container.addSubview(redSquare)
+        container.addSubview(yellowSquare)
     }
     
     @objc func goBack() {
@@ -40,15 +40,32 @@ class SecondViewController: UIViewController {
     }
     
     @objc func animatePressed() {
-        var views: (frontView: UIView, backView: UIView)
         
-        if ((self.redSquare.superview) != nil) {
-            views = (frontView: redSquare, backView: blueSquare)
-        } else {
-            views = (frontView: blueSquare, backView: redSquare)
-        }
-        let transitionOptions = UIView.AnimationOptions.transitionFlipFromLeft
-        UIView.transition(from: views.frontView, to: views.backView, duration: 1.0, options: transitionOptions, completion: nil)
+        let fullRotation = CGFloat(Double.pi * 2)
+        let duration = 2.0
+        let delay = 0.0
+        let options = UIView.KeyframeAnimationOptions.calculationModeLinear
+        
+        UIView.animateKeyframes(withDuration: duration, delay: delay, options: options, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3, animations: {
+                // start at 0.00s (5s × 0)
+                // duration 1.67s (5s × 1/3)
+                // end at   1.67s (0.00s + 1.67s)
+                self.yellowSquare.transform = CGAffineTransform(rotationAngle: 1/3 * fullRotation)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 1/3, relativeDuration: 1/3, animations: {
+                self.yellowSquare.transform = CGAffineTransform(rotationAngle: 2/3 * fullRotation)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 2/3, relativeDuration: 1/3, animations: {
+                self.yellowSquare.transform = CGAffineTransform(rotationAngle: 3/3 * fullRotation)
+            })
+            
+        }, completion: {finished in
+            // any code entered here will be applied
+            // once the animation has completed
+            
+        })
     }
-
 }
+
+
