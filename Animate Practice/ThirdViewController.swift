@@ -23,6 +23,7 @@ class ThirdViewController: UIViewController {
             let blackSquare = UIView()
             blackSquare.backgroundColor = .black
             blackSquare.frame = CGRect(x: 55, y: 300, width: 20, height: 20)
+            blackSquare.makeCircular()
             self.view.addSubview(blackSquare)
             let randomYOffset = CGFloat( arc4random_uniform(150))
             

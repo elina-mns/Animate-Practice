@@ -35,6 +35,7 @@ class FirstViewController: UIViewController {
             let coloredSquare = UIView()
             coloredSquare.backgroundColor = UIColor.blue
             coloredSquare.frame = CGRect(x: 0-size, y: yPosition, width: size, height: size)
+            coloredSquare.makeCircular()
             self.view.addSubview(coloredSquare)
             
             UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
